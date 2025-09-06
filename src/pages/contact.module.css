@@ -1,0 +1,152 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap");
+
+/* Main background & spacing from navbar */
+.mainContainer {
+  background-color: black;
+  color: yellow;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  padding: 100px 20px 50px; /* top padding leaves space for navbar */
+}
+
+/* Toast notifications */
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+  animation: slideDown 0.5s ease-out;
+}
+.toast.success { background: yellow; color: black; }
+.toast.error { background: #ff4d4d; color: white; }
+@keyframes slideDown { 0% { opacity: 0; transform: translate(-50%, -50px); } 100% { opacity: 1; transform: translate(-50%,0); } }
+
+/* Wrapper for form + map */
+.contactWrapper {
+  display: flex;
+  gap: 50px;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+/* Section headings */
+.heading {
+  font-family: 'Montserrat', sans-serif;
+  color: yellow;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.subheading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffeb99;
+}
+
+/* Form styling */
+.formContainer {
+  flex: 1;
+  min-width: 300px;
+  background: rgba(255, 204, 0, 0.05);
+  border: 2px solid yellow;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contactForm input,
+.contactForm textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid yellow;
+  background: black;
+  color: yellow;
+  font-size: 1rem;
+  outline: none;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 6px rgba(255, 204, 0, 0.5);
+}
+
+.contactForm button {
+  padding: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: yellow;
+  color: black;
+  transition: 0.3s;
+}
+
+.contactForm button:hover {
+  background: #ffcc00;
+}
+
+/* Map section */
+.mapSection {
+  flex: 1;
+  min-width: 300px;
+}
+
+.mapSection h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Map styling */
+.mapSection .leaflet-container {
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+}
+/* Toast notifications */
+.toast {
+  position: fixed;
+  top: 100px; /* Add space so it is below the navbar */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  z-index: 2000; /* Make sure it's above the navbar */
+  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+  animation: slideDown 0.5s ease-out;
+}
+
+.toast.success { background: yellow; color: black; }
+.toast.error { background: #ff4d4d; color: white; }
+
+@keyframes slideDown {
+  0% { opacity: 0; transform: translate(-50%, -50px); }
+  100% { opacity: 1; transform: translate(-50%,0); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contactWrapper { flex-direction: column; gap: 30px; }
+  .mapSection .leaflet-container { height: 350px; }
+}
+
+@media (max-width: 500px) {
+  .formContainer { padding: 20px; }
+}

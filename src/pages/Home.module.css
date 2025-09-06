@@ -1,0 +1,215 @@
+/* Home Wrapper */
+.homeWrapper {
+  width: 100%;           
+  min-height: 100vh;      
+  background: #000;       
+  color: #FFD700;         
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  margin: 0;              
+  padding: 0;  
+  padding-top: 80px;   /* ✅ Push content down below navbar */
+}
+
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 70vh;
+  overflow: hidden;
+  border-radius: 16px;
+  margin: 1rem auto;
+  left: 0px;
+  top: 7px;
+}
+
+.heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.fade {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Arrows */
+.leftArrow, .rightArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 215, 0, 0.2);
+  border: 2px solid #FFD700;
+  color: #FFD700;
+  font-size: 1.8rem;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.leftArrow:hover, .rightArrow:hover {
+  background: #FFD700;
+  color: #000;
+}
+
+.leftArrow { left: 15px; }
+.rightArrow { right: 15px; }
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: gray;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activeDot {
+  background: #FFD700;
+  box-shadow: 0 0 8px #FFD700;
+}
+
+/* Search Box */
+.searchWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.searchBox {
+  width: 80%;
+  max-width: 600px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #FFD700;
+  font-size: 1rem;
+  outline: none;
+  background: #111;
+  color: #FFD700;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+.searchBox:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #FFD700;
+}
+.searchBox:focus {
+  background: #222;
+  box-shadow: 0 0 15px #FFD700;
+}
+
+/* Products Grid */
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  width: 90%;
+  margin-top: 1rem;
+}
+
+.productCard {
+  background: #111;
+  border: 1px solid #FFD700;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #FFD700;
+}
+
+.productImage {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: white;
+  margin-bottom: 0.5rem;
+}
+
+.productTitle a {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.productTitle a:hover {
+  color: #fff176;
+}
+
+.productPrice {
+  color: #FFD700;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Scroll Animations */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.categorySection {
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.categoryTitle {
+  font-size: 1.5rem;
+  color: #FFD700;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #FFD700;
+  padding-bottom: 5px;
+}
+.heroVideo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heroVideo.active {
+  opacity: 1;
+  z-index: 1;
+}

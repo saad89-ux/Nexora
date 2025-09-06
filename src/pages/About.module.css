@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap');
+
+.mainContainer {
+  background-color: black;
+  color: yellow;
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 50px;
+
+}
+
+h1, h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: yellow;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.aboutContent {
+  max-width: 900px;
+  margin: 35px auto;
+  padding: 50px 20px;
+  line-height: 1.6;
+}
+
+.historySection {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,204,0,0.3);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.timelineItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  background: rgba(0,0,0,0.7);
+  padding: 15px 20px;
+  border-left: 3px solid yellow;
+  border-radius: 6px;
+  color: yellow;
+  transition: transform 0.3s;
+}
+
+.timelineItem:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.iconWrapper { font-size: 24px; }
+.year { font-weight: bold; font-size: 18px; min-width: 60px; }
+.event { font-size: 16px; line-height: 1.5; }
+
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+/* Marquee */
+.marqueeSection { overflow: hidden; padding: 30px 0; }
+.marquee { width: 100%; overflow: hidden; white-space: nowrap; }
+.marqueeContent { display: inline-block; animation: scrollLeft 20s linear infinite; }
+.marqueeSection:hover .marqueeContent { animation-play-state: paused; }
+
+/* Faster scroll for partners */
+.fastScroll { animation-duration: 15s !important; }
+
+@keyframes scrollLeft { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+.partnerLogo { display: inline-block; margin: 0 40px; }
+.partnerLogo img { width: 120px; filter: brightness(0) invert(1); transition: transform 0.3s; }
+.partnerLogo img:hover { transform: scale(1.2); }
+
+.testimonialCard { display: inline-block; margin: 0 30px; padding: 15px 25px; background: rgba(0,0,0,0.7); border-radius: 8px; color: yellow; font-size: 16px; text-align: center; transition: transform 0.3s; }
+.testimonialCard:hover { transform: scale(1.05); }
+
+.userAvatar { display: inline-block; margin: 0 30px; padding: 15px 25px; background: rgba(0,0,0,0.7); border-radius: 50%; text-align: center; font-weight: bold; transition: transform 0.3s; }
+.userAvatar:hover { transform: scale(1.2); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timelineItem { flex-direction: column; align-items: flex-start; padding: 10px 15px; font-size: 14px; }
+  .iconWrapper { font-size: 20px; margin-bottom: 5px; }
+  .partnerLogo img { width: 80px; margin: 0 20px; }
+  .testimonialCard { font-size: 14px; padding: 10px 15px; }
+  .userAvatar { font-size: 14px; padding: 10px 15px; }
+  .marqueeContent { animation-duration: 25s; }
+}
+/* Text-based partner logos */
+.textLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px;
+  background: rgba(255,255,255,0.1);
+  color: yellow;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 8px;
+  min-width: 120px;
+  text-align: center;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.textLogo:hover {
+  transform: scale(1.2);
+  background: rgba(255,255,255,0.2);
+}
