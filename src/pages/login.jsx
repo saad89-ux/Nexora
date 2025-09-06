@@ -3,7 +3,7 @@ import { auth } from "../Firebase/fireapp";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { motion } from "framer-motion";   
-import styles from "./Signup.module.css"; 
+import styles from "./signup.module.css"; 
 
 const Login = () => {
   const [Email, setEmail] = useState("");

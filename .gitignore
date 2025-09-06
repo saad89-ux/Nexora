@@ -7,6 +7,7 @@ yarn-error.log*
 # Production builds
 /dist/
 /build/
+/.vercel/
 
 # Environment variables
 .env
@@ -59,3 +60,11 @@ jspm_packages/
 
 # Yarn Integrity file
 .yarn-integrity
+
+# Vercel
+.vercel
+
+# Firebase
+.firebase/
+firebase-debug.log*
+firebase-debug.*.log*
